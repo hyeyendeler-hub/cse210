@@ -3,14 +3,15 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   
+        // Asking user the name of their home country and district, then printing the answers in capital letters.
         Console.WriteLine("What is your home country? ");
         string homeCountry = Console.ReadLine();
 
         Console.WriteLine("You are from {0} ", homeCountry);
         string capitalCity = homeCountry.ToUpper(); 
          
-        Console.WriteLine("In which district do you come from?");
+        Console.WriteLine("In which district do you come from? ");
         string district = Console.ReadLine();   
 
         Console.WriteLine("You are from {0} ", district);
