@@ -18,6 +18,5 @@ class Program
 
         Console.WriteLine("The capital of {0} is {1}", homeCountry, capitalCity);
         Console.WriteLine("The district you come from is {0}", capitalLetters);
-
     }
 }
