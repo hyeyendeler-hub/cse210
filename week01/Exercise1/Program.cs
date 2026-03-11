@@ -3,21 +3,13 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {   
-        // Asking user the name of their home country and district, then printing the answers in capital letters.
-        Console.WriteLine("What is your home country? ");
-        string homeCountry = Console.ReadLine();
+    {
+        Console.Write("Enter your first name: ");
+        string firstName = Console.ReadLine();
 
-        Console.WriteLine("You are from {0} ", homeCountry);
-        string capitalCity = homeCountry.ToUpper(); 
-         
-        Console.WriteLine("In which district do you come from? ");
-        string district = Console.ReadLine();   
+        Console.Write("Enter your last name: ");
+        string lastName = Console.ReadLine();
 
-        Console.WriteLine("You are from {0} ", district);
-        string capitalLetters = district.ToUpper();
-
-        Console.WriteLine("The capital of {0} is {1} ", homeCountry, capitalCity);
-        Console.WriteLine("The district you come from is {0} ", capitalLetters);
+        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
     }
 }

@@ -4,29 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Ask the user for a number and count up to that number using a loop
-        Console.Write("Enter a number: ");
-        string input = Console.ReadLine();
-        int limit = int.Parse(input);
+        // Guess My Number game
+        Random random = new Random();
+        int magicNumber = random.Next(1, 101); // random number between 1 and 100
 
-        // Count from 1 to the number
-        for (int i = 1; i <= limit; i++)
+        int guess = 0;
+
+        while (guess != magicNumber)
         {
-            if (i % 3 == 0 && i % 5 == 0)
+            Console.Write("What is your guess? ");
+            string input = Console.ReadLine();
+            guess = int.Parse(input);
+
+            if (guess < magicNumber)
             {
-                Console.WriteLine("FizzBuzz");
+                Console.WriteLine("Higher");
             }
-            else if (i % 3 == 0)
+            else if (guess > magicNumber)
             {
-                Console.WriteLine("Fizz");
-            }
-            else if (i % 5 == 0)
-            {
-                Console.WriteLine("Buzz");
+                Console.WriteLine("Lower");
             }
             else
             {
-                Console.WriteLine(i);
+                Console.WriteLine("You guessed it!");
             }
         }
     }
