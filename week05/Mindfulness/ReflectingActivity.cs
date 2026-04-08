@@ -31,7 +31,7 @@ public class ReflectingActivity : Activity
     {
     }
 
-    public void Run()
+    public (string name, int duration) Run()
     {
         Start();
         Console.Clear();
@@ -45,7 +45,7 @@ public class ReflectingActivity : Activity
         Console.WriteLine();
         ShowSpinner(5);
 
-        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
         int questionIndex = 0;
         while (DateTime.Now < endTime)
         {
@@ -57,6 +57,7 @@ public class ReflectingActivity : Activity
         }
 
         End();
+        return (GetName(), GetDuration());
     }
 
 }

@@ -19,7 +19,7 @@ public class ListingActivity : Activity
     {
     }
 
-    public void Run()
+    public (string name, int duration) Run()
     {
         Start();
         Console.Clear();
@@ -34,7 +34,7 @@ public class ListingActivity : Activity
         Console.WriteLine("You may begin in:");
         ShowCountdown(5);
 
-        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
@@ -50,6 +50,7 @@ public class ListingActivity : Activity
         ShowSpinner(3);
 
         End();
+        return (GetName(), GetDuration());
     }
 
 }

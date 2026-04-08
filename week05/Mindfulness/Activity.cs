@@ -3,19 +3,19 @@ using System.Threading;
 
 public class Activity
 {
-    protected string _name;
-    protected string _description;
-    protected int _duration;
+    private string _name;
+    private string _description;
+    private int _duration;
+
+    protected string GetName() => _name;
+    protected string GetDescription() => _description;
+    protected int GetDuration() => _duration;
+    protected void SetDuration(int seconds) => _duration = seconds;
 
     public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-    }
-
-    public void SetDuration(int seconds)
-    {
-        _duration = seconds;
     }
 
     public void Start()
@@ -28,6 +28,7 @@ public class Activity
         Console.Write("How long, in seconds, would you like for your session? ");
         string input = Console.ReadLine();
         _duration = int.Parse(input);
+        SetDuration(_duration);
     }
 
     public void End()
@@ -36,7 +37,7 @@ public class Activity
         Console.WriteLine("Well done!!");
         ShowSpinner(3);
         Console.WriteLine();
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}");
+        Console.WriteLine($"You have completed another {GetDuration()} seconds of the {GetName()}");
         ShowSpinner(5);
     }
 

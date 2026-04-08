@@ -7,14 +7,14 @@ public class BreathingActivity : Activity
     {
     }
 
-    public void Run()
+    public (string name, int duration) Run()
     {
         Start();
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowSpinner(3);
 
-        int cycles = _duration / 10;
+        int cycles = GetDuration() / 10;
         for (int i = 0; i < cycles; i++)
         {
             Console.WriteLine();
@@ -26,5 +26,6 @@ public class BreathingActivity : Activity
         }
 
         End();
+        return (GetName(), GetDuration());
     }
 }
